@@ -17,13 +17,14 @@ export interface Item extends Product {
   value: number;
 }
 
-export interface Reciver {
+export interface OrderReciver {
   nationalCode: number;
   phoneNumber: number;
   address: string;
 }
 
-export interface OrderDetail extends Reciver {
+export interface OrderDetail {
+  orderReciver: OrderReciver;
   description: string;
 }
 
