@@ -3,11 +3,11 @@ import type {ToastOptions} from '@ionic/core';
 
 declare global {
   interface AlwatrSignals {
-    readonly 'job-list': Array<Product>;
+    readonly 'product-list': Array<Product>;
     readonly toast: Partial<ToastOptions> & {message: string};
   }
   interface AlwatrRequestSignals {
-    readonly 'job-list': Record<string, never>;
+    readonly 'product-list': Record<string, never>;
   }
 }
 

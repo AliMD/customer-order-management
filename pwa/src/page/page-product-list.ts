@@ -1,13 +1,14 @@
 import {AlwatrElement} from '@alwatr/element';
+import {SignalInterface} from '@alwatr/signal';
 import {css, html} from 'lit';
-import {customElement} from 'lit/decorators.js';
+import {customElement, state} from 'lit/decorators.js';
 
 import {sampleProductList} from '../config';
 import styles from '../style';
 
 import '../component/product-card';
 
-import type {ListenerInterface} from '@alwatr/signal';
+import type {Product} from '../type';
 import type {TemplateResult} from 'lit';
 
 declare global {
@@ -40,16 +41,16 @@ export class PageProductList extends AlwatrElement {
     `,
   ];
 
-  protected _listenerList: Array<unknown> = [];
+  @state() private __productList: Product[] = [];
+
+  static productListSignal = new SignalInterface('product-list');
 
   override connectedCallback(): void {
     super.connectedCallback();
-    // this._listenerList.push(router.signal.addListener(() => this.requestUpdate()));
-  }
 
-  override disconnectedCallback(): void {
-    super.disconnectedCallback();
-    this._listenerList.forEach((listener) => (listener as ListenerInterface<keyof AlwatrSignals>).remove());
+    PageProductList.productListSignal.addListener((productList) => {
+      this.__productList = productList;
+    });
   }
 
   override render(): TemplateResult {
@@ -60,19 +61,19 @@ export class PageProductList extends AlwatrElement {
         </ion-toolbar>
       </ion-header>
 
-      <ion-content fullscreen>${this._renderCards()}</ion-content>
+      <ion-content fullscreen>${this._renderCards(this.__productList)}</ion-content>
     `;
   }
 
-  protected _renderCards(): TemplateResult {
-    const cards = sampleProductList.map(
+  protected _renderCards(products: Product[]): TemplateResult {
+    const cards = products.map(
         (product) =>
           html`
           <product-card
             id=${product.id}
-            name=${product.title}
-            imageSrc=${product.image}
-            price=${product.price}
+            .name=${product.name}
+            .imageSrc=${product.image}
+            .price=${product.price}
           ></product-card>
         `,
     );
