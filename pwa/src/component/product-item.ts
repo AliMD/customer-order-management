@@ -78,6 +78,9 @@ export class ProductItem extends AlwatrElement {
         min-width: 55px;
         text-align: left;
         direction: ltr;
+        border: 2px solid #888;
+        outline: none;
+        border-radius: 3px;
       }
     `,
   ];
