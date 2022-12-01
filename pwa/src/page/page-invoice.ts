@@ -3,8 +3,7 @@ import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
 import {sampleProductList} from '../config';
-import ionicNormalize from '../style/ionic.normalize';
-import ionicTheming from '../style/ionic.theming';
+import styles from '../style';
 
 import '../component/product-item';
 
@@ -19,8 +18,7 @@ declare global {
 @customElement('page-invoice')
 export class PageInvoice extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       :host {
         display: flex;

@@ -2,8 +2,7 @@ import {AlwatrElement} from '@alwatr/element';
 import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
-import ionicNormalize from '../style/ionic.normalize';
-import ionicTheming from '../style/ionic.theming';
+import styles from '../style';
 
 import type {TemplateResult} from 'lit';
 
@@ -16,8 +15,7 @@ declare global {
 @customElement('page-information')
 export class PageInformation extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       :host {
         display: flex;
@@ -69,7 +67,7 @@ export class PageInformation extends AlwatrElement {
           </ion-item>
           <ion-item fill="solid">
             <ion-label position="stacked">نوع ماشین</ion-label>
-            <ion-select placeholder="...">
+            <ion-select placeholder="..." interface="popover">
               <ion-select-option value="benz">خاور</ion-select-option>
               <ion-select-option value="nissan">وانت</ion-select-option>
             </ion-select>

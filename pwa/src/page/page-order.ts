@@ -2,8 +2,7 @@ import {AlwatrElement} from '@alwatr/element';
 import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
-import ionicNormalize from '../style/ionic.normalize';
-import ionicTheming from '../style/ionic.theming';
+import styles from '../style';
 
 import type {ListenerInterface} from '@alwatr/signal';
 import type {TemplateResult} from 'lit';
@@ -17,8 +16,7 @@ declare global {
 @customElement('page-order')
 export class PageOrder extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       :host {
         display: flex;

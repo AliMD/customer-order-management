@@ -5,8 +5,7 @@ import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import {cache} from 'lit/directives/cache.js';
 
-import ionicNormalize from './style/ionic.normalize';
-import ionicTheming from './style/ionic.theming';
+import styles from './style';
 
 import './component/ionic';
 import './page/page-product-list';
@@ -29,8 +28,7 @@ declare global {
 @customElement('alwatr-pwa')
 export class AlwatrPWA extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       .page-container {
         position: relative;

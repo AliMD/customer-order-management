@@ -2,8 +2,7 @@ import {AlwatrElement} from '@alwatr/element';
 import {css, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 
-import ionicNormalize from '../style/ionic.normalize';
-import ionicTheming from '../style/ionic.theming';
+import styles from '../style';
 
 import type {TemplateResult} from 'lit';
 
@@ -16,8 +15,7 @@ declare global {
 @customElement('page-home')
 export class PageHome extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       :host {
         display: flex;

@@ -4,8 +4,7 @@ import {customElement} from 'lit/decorators.js';
 import {property} from 'lit/decorators/property.js';
 import {live} from 'lit/directives/live.js';
 
-import ionicNormalize from '../style/ionic.normalize';
-import ionicTheming from '../style/ionic.theming';
+import styles from '../style';
 
 import type {ListenerInterface} from '@alwatr/signal';
 import type {TemplateResult} from 'lit';
@@ -19,8 +18,7 @@ declare global {
 @customElement('product-item')
 export class ProductItem extends AlwatrElement {
   static override styles = [
-    ionicNormalize,
-    ionicTheming,
+    ...styles,
     css`
       :host {
         display: flex;
