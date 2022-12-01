@@ -1,5 +1,5 @@
 {
-  "name": "@alwatr/customer-order-management",
+  "name": "@alwatr/com",
   "description": "Alwatr Customer Order Management",
   "repository": "https://github.com/AliMD/customer-order-management/",
   "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com)",
@@ -24,6 +24,7 @@
     "format:prettier": "prettier . --ignore-path ./.gitignore --write"
   },
   "workspaces": [
+    "api"
   ],
   "devDependencies": {
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
