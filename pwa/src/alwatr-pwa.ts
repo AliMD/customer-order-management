@@ -39,11 +39,11 @@ export class AlwatrPWA extends AlwatrElement {
       }
     `,
     css`
-      ion-toolbar.controll-bar {
+      ion-toolbar.control-bar {
         --padding-start: 5%;
         --padding-end: 5%;
       }
-      ion-toolbar.controll-bar ion-button.next {
+      ion-toolbar.control-bar ion-button.next {
         width: 100%;
       }
     `,
@@ -105,19 +105,19 @@ export class AlwatrPWA extends AlwatrElement {
   override render(): TemplateResult {
     return html`
       <div class="page-container">${cache(router.outlet(this._routes))}</div>
-      <ion-footer> ${this._renderControllBarTemplate()} ${this._renderTabBarTemplate()} </ion-footer>
+      <ion-footer> ${this._renderControlBarTemplate()} ${this._renderTabBarTemplate()} </ion-footer>
     `;
   }
 
-  protected _renderControllBarTemplate(): TemplateResult {
+  protected _renderControlBarTemplate(): TemplateResult {
     return html`
-      <ion-toolbar class="controll-bar">
+      <ion-toolbar class="control-bar">
         <ion-button class="next" fill="outline" slot="start">
-          <alwatr-icon slot="start" name="arrow-back"></alwatr-icon>
+          <alwatr-icon slot="start" name="arrow-back" dir="rtl" flip-rtl></alwatr-icon>
           <ion-label>بعدی</ion-label>
         </ion-button>
         <ion-button class="perv" fill="clear" slot="end">
-          <alwatr-icon slot="end" name="arrow-forward"></alwatr-icon>
+          <alwatr-icon slot="end" name="arrow-forward" dir="rtl" flip-rtl></alwatr-icon>
           <ion-label>قبلی</ion-label>
         </ion-button>
       </ion-toolbar>
