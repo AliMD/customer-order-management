@@ -1,4 +1,4 @@
-import type {AlwatrDocumentObject} from '@alwatr/fetch'
+import type {AlwatrDocumentObject} from '@alwatr/fetch';
 
 export interface User extends AlwatrDocumentObject {
   name: string;
@@ -10,6 +10,7 @@ export interface Product extends AlwatrDocumentObject {
   name: string;
   description: string;
   type: string; // FIXME:
+  image: string;
   price: number;
 }
 
