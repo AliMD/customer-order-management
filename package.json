@@ -24,6 +24,7 @@
     "format:prettier": "prettier . --ignore-path ./.gitignore --write"
   },
   "workspaces": [
+    "./pwa"
   ],
   "devDependencies": {
     "@microsoft/eslint-formatter-sarif": "^3.0.0",
