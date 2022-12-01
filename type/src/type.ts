@@ -18,14 +18,14 @@ export interface Item extends Product {
   value: number;
 }
 
-export interface OrderReciver {
+export interface OrderReceiver {
   nationalCode: number;
   phoneNumber: number;
   address: string;
 }
 
 export interface OrderDetail {
-  orderReciver: OrderReciver;
+  orderReceiver: OrderReceiver;
   description: string;
 }
 

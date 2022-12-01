@@ -1,13 +1,47 @@
+import type {AlwatrDocumentObject} from '@alwatr/fetch';
 import type {ToastOptions} from '@ionic/core';
-
-export {};
 
 declare global {
   interface AlwatrSignals {
-    // readonly 'job-list': Array<Job>;
+    readonly 'job-list': Array<Product>;
     readonly toast: Partial<ToastOptions> & {message: string};
   }
-  // interface AlwatrRequestSignals {
-  //   readonly 'job-list': Record<string, never>;
-  // }
+  interface AlwatrRequestSignals {
+    readonly 'job-list': Record<string, never>;
+  }
+}
+
+export interface User extends AlwatrDocumentObject {
+  name: string;
+  phoneNumber: number;
+  nationalCode: number;
+}
+
+export interface Product extends AlwatrDocumentObject {
+  name: string;
+  description: string;
+  type: string; // FIXME:
+  image: string;
+  price: number;
+}
+
+export interface Item extends Product {
+  value: number;
+}
+
+export interface OrderReceiver {
+  nationalCode: number;
+  phoneNumber: number;
+  address: string;
+}
+
+export interface OrderDetail {
+  orderReceiver: OrderReceiver;
+  description: string;
+}
+
+export interface Order extends AlwatrDocumentObject {
+  userId: string;
+  detail: OrderDetail;
+  itemList: Array<Item>;
 }
