@@ -1,0 +1,40 @@
+{
+  "name": "@alwatr/com",
+  "description": "Alwatr Customer Order Management",
+  "repository": "https://github.com/AliMD/customer-order-management/",
+  "author": "S. Ali Mihandoost <ali.mihandoost@gmail.com> (https://ali.mihandoost.com)",
+  "contributors": [
+    "S. Amir Mohammad Najafi <njfamirm@gmail.com> (https://njfamirm.ir)"
+  ],
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "scripts": {
+    "f": "yarn format",
+    "fl": "yarn format:eslint",
+    "fp": "yarn format:prettier",
+    "l": "yarn lint",
+    "lint": "run-s lint:*",
+    "lint:ts": "eslint . --config .eslintrc.json --ext .ts --ignore-path ./.gitignore",
+    "format": "run-s format:prettier format:eslint",
+    "format:eslint": "yarn lint:ts --fix",
+    "format:prettier": "prettier . --ignore-path ./.gitignore --write"
+  },
+  "workspaces": [
+    "type"
+  ],
+  "devDependencies": {
+    "@microsoft/eslint-formatter-sarif": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-wc": "^1.4.0",
+    "prettier": "^2.8.0"
+  }
+}
