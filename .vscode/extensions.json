@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "bierner.lit-html",
+    "christian-kohler.path-intellisense",
+    "DavidAnson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "GitHub.vscode-pull-request-github",
+    "humao.rest-client",
+    "jgclark.vscode-todo-highlight",
+    "runem.lit-plugin",
+    "streetsidesoftware.code-spell-checker-persian",
+    "streetsidesoftware.code-spell-checker",
+  ]
+}
