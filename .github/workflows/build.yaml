@@ -24,9 +24,9 @@ jobs:
     strategy:
       matrix:
         include:
-          # - folder: api
+          - folder: api
           # - folder: crawler
-          - folder: pwa
+          # - folder: pwa
 
     permissions:
       contents: read

@@ -4,7 +4,7 @@ export const config = {
   storage: {
     host: process.env.STORAGE_HOST ?? '127.0.0.1',
     port: process.env.STORAGE_PORT != null ? +process.env.STORAGE_PORT : 9000,
-    name: process.env.STORAGE_NAME ?? 'job',
+    name: process.env.STORAGE_NAME ?? 'order',
     token: process.env.STORAGE_TOKEN ?? 'YOUR_SECRET_TOKEN',
   },
   nanoServer: {
